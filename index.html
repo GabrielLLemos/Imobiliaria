@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Imobiliária</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://unpkg.com/axios@0.21.4/dist/axios.min.js"></script>
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="logo">
+                <img src="images/Logo.png">
+            </div>
+
+            <div class="header-info">
+                <div class="menu">
+                    <p>Início</p>
+                    <p>Sobre</p>
+                    <p>Contato</p>
+                    <button class="add" id="add" onclick="btnOpenRegisterModal()">Novo</button>
+                </div>
+    
+                <div class="contato">
+                    <img src="images/Group 2.png">
+                    <p>+55 (21)xxxx-xxxx</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="main">
+
+            <div class="search-main">
+
+                <div class="search-div">
+                    <section class="form-size">
+                        <div class="type">
+                            <select name="comprar-alugar" id="modalidade">
+                                <option value="todos">Todos</option>
+                                <option value="compra">Comprar</option>
+                                <option value="aluguel">Aluguel</option>
+                            </select>
+                        </div>
+                        <form class="search-form">
+                            <input type="text" placeholder="Localização do imóvel" id="local">
+                        </form>
+                        <button class="searchButton" id="searchButton" onclick="btnSearchInfo()">Procurar</button>
+                    </section>
+                </div>
+
+            </div>
+
+            <div class="search-result-filter">
+
+                <div class="filter-div">
+                    <div class="filter-size">
+                        <select class="filter-imovel" id="tipo_de_imovel">
+                            <option>Tipo de imóvel</option>
+                        </select>
+                        <select class="filter-banheiros" id="numero_de_banheiros">
+                            <option>Banheiros</option>
+                        </select>
+                        <select class="filter-quartos" id="numero_de_quartos">
+                            <option>Quartos</option>
+                        </select>
+                        <button class="buscar" id="buscar_imovel" onclick="newData()">Filtrar</button>
+                    </div>
+                </div>
+
+                <div class="search-result">
+                    <div class="info">
+                        <div class="info-size">
+                            <h2>Resultados da Busca</h2>
+                            <p>(x) imóveis encontrados</p>
+                        </div>
+                    </div>
+
+                    <div class="imoveis">
+
+                        <div class="imoveis-size" id="imoveis_html">
+                            
+                            <!--Vindo do JS-->
+
+                        </div>
+
+                        <div class="janela-modal" id="janela-modal" >
+                            <div class="modal" id="modal">
+                                <h1 id="title-form">Cadastrar Imóvel</h1>
+
+                                <div class="edit-form">
+                                    <label>Título</label>
+                                    <input type="text" id="new_title" placeholder="Inserir Título do imóvel.">
+                                </div>
+
+                                <div class="edit-form">
+                                    <label>Valor</label>
+                                    <input type="text" id="new_price" placeholder="Inserir valor do imóvel.">
+                                </div>
+
+                                <div class="edit-form">
+                                    <label>Modalidade</label>
+                                    <input type="input" id="new_modalidade" placeholder="Compra ou Aluguel">
+                                </div>
+
+                                <div class="edit-form">
+                                    <label>Descrição do imóvel</label>
+                                    <input type="text" id="new_desc" placeholder="Uma breve descrição do imóvel.">
+                                </div>
+
+                                <div class="edit-form">
+                                    <label>Quartos</label>
+                                    <input type="number" id="new_room" placeholder="Número de quartos.">
+                                </div>
+
+                                <div class="edit-form">
+                                    <label>Banheiros</label>
+                                    <input type="number" id="new_bath" placeholder="Número de banheiros.">
+                                </div>
+
+                                <div class="edit-button">
+                                    <button class="close" id="close" onclick="btnCloseModal()">Cancelar</button>
+                                    <button id="btn-form">Cadastrar</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+        <!--Fim Main-->
+
+        <footer class="footer">
+            <div>
+                <p>Nome da Empresa</p>
+                <p>CNPJ</p>
+            </div>
+        </footer>
+        <script src="js/script.js"></script>
+        <script src="js/api.js"></script>
+    </body>
+</html>
